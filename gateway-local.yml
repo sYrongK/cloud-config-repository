@@ -10,7 +10,7 @@ spring:
       routes: # 어느 경우일 때(predicate) 어디로 보내고(uri) 요청 혹은 응답을 어떻게 할 것인가(filter)
         - id: user-service
 #          uri: http://localhost:8091 #최종 요청이 http://localhost:8091/**
-          uri: lb://USER # 최종 요청은 서비스 디스커버리에 등록되어 있는 USER-SERVICE로 보내겠다
+          uri: lb://user-service # 최종 요청은 서비스 디스커버리에 등록되어 있는 USER-SERVICE로 보내겠다
           predicates:
             - Path=/user/**
           filters:
