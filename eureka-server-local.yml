@@ -1,0 +1,16 @@
+server:
+  port: 8761
+  forward-headers-strategy: framework
+
+eureka:
+  instance:
+    hostname: localhost
+    app:
+      name: eureka-server-local
+  server:
+    enable-self-preservation: false # 일시적인 네트워크 장애로 인한 서비스 해제 막기 위한 자기 보호 모드 : 기본 true
+  client:
+    fetch-registry: false # 다른 eureka 서버에서 레지스트리를 가져오지 않는다.
+    register-with-eureka: false # 이 서버를 eureka 디스커버리에 등록하지 않는다.
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
