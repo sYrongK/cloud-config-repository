@@ -8,3 +8,7 @@ spring:
 test:
   property:
     value: cloud config client 테스트
+
+eureka:
+  client:
+    register-with-eureka: true

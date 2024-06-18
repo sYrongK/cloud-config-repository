@@ -4,3 +4,7 @@ server:
 spring:
   application:
     name: product
+
+eureka:
+  client:
+    register-with-eureka: true
