@@ -1,14 +1,14 @@
 # -- Eureka
 eureka:
   instance:
-    preferIpAddress: true
+    preferIpAddress: true # DNS 통해 호스트네임으로 찾지 말고, ip로 찾도록 설정
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
     healthcheck:
       enabled: true
     register-with-eureka: false
-    fetch-registry: true
+    fetch-registry: true # eureka server에서 인스턴스 레지스트리를 주기적으로 가져오도록 설정. 로컬 캐시에 저장해두고 호출할 수 있게 한다.
 
 management:
   endpoint:
